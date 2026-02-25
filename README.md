@@ -6,7 +6,7 @@ Image builder for Cluster API VMware. Required for automatically creating OS ima
 
 * Written for GitLab CI
 * Internet connection is required for the GitLab Runner. If you want to use the GitLab Runner through a proxy, please see the information in the [image-builder book](https://image-builder.sigs.k8s.io/)
-* Please use your own CI_IMAGE (see file cicd/.gitlab-ci-template.yml)
+* Please use your own CI_IMAGE with [govc](https://github.com/vmware/govmomi/releases) pre-installed (see file cicd/.gitlab-ci-template.yml)
 
 ## CI/CD variables
 
