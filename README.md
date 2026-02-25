@@ -8,7 +8,7 @@ Image builder for Cluster API VMware. Required for automatically creating OS ima
 * Internet connection is required for the GitLab Runner. If you want to use the GitLab Runner through a proxy, please see the information in the [image-builder book](https://image-builder.sigs.k8s.io/)
 * Please use your own CI_IMAGE (see file cicd/.gitlab-ci-template.yml)
 
-## Ci-cd variables
+## CI/CD variables
 
 The following CI/CD variables are required:
 
@@ -21,7 +21,7 @@ The following CI/CD variables are required:
 * Can be run on a schedule (e.g., monthly)
 * Creates the current OS image template
 * Renames the previous template by adding the suffix -<year>-<previous-month>
-*Keeps the last 3 templates
+* Keeps the last 3 templates
 
 ## Contribition
 
