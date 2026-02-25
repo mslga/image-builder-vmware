@@ -1,0 +1,24 @@
+variables:
+  CI_IMAGE: $CI_REGISTRY/gitlab-runner:$CI_IMAGE_VERSION
+  IMAGE_BUILDER_IMAGE: registry.k8s.io/scl-image-builder/cluster-node-image-builder-amd64:$IMAGE_BUILDER_VERSION
+stages:
+  - Build
+
+.build:
+  stage: Build
+  image: $CI_IMAGE
+  only:
+    refs:
+      - master
+  variables:
+    DOCKER_DRIVER: overlay2
+  services:
+    - name: $CI_REGISTRY/docker:dind
+      alias: docker # this service name is now a part of public api and must be kept
+  tags:
+    - dind # pick a runner, which can build docker images
+  before_script:
+    - source ./scripts/common.sh
+  script:
+    - render_values_by_find_replace VSPHERE_ADMIN ${VC_CAPV_ADMIN} VSPHERE_PASSWORD ${VC_CAPV_PASSWORD}
+    - image_build

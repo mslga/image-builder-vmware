@@ -1,0 +1,15 @@
+{
+    "vcenter_server":"vc01.example.com",
+    "username":"VSPHERE_ADMIN",
+    "password":"VSPHERE_PASSWORD",
+    "datacenter": "DC1",
+    "datastore":"/DC1/datastore/DC01/sror01",
+    "resourse_pool":"/DC1/CL1/pool",
+    "folder": "",
+    "cluster": "/DC1/CL1",
+    "network": "/DC1/network/k8s_cluster-01",
+    "insecure_connection": "true",
+    "template": "false",
+    "create_snapshot": "false",
+    "linked_clone": "false"
+}

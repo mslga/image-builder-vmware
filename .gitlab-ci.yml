@@ -1,0 +1,10 @@
+include:
+  - local: 'cicd/.gitlab-ci-template.yml'
+
+build-ubuntu-2204-kube-v1.32.4:
+  extends: .build
+  variables:
+    CI_IMAGE_VERSION: "v1.9.10" # this is example, use your own gitlab runner ci image
+    IMAGE_BUILDER_VERSION: "v0.1.46" # support k8s version 1.32.4 from the scratch
+    UBUNTU_VERSION: "2204"
+    K8S_VERSION: "v1.32.4"
