@@ -20,7 +20,7 @@ The following CI/CD variables are required:
 
 * Can be run on a schedule (e.g., monthly)
 * Creates the current OS image template
-* Renames the previous template by adding the suffix -<year>-<previous-month>
+* Renames the previous template by adding the suffix `-year-previous-month`
 * Keeps the last 3 templates
 
 ## Contribition
